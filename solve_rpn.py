@@ -38,7 +38,7 @@ def solve_rpn(tokens):
                             raise VariableNotDefinedError
 
                     operator_table.var_list[lhs] = rhs
-                    return colors.blue("(" + lhs + " => " + str(rhs) + ")")
+                    return "(" + lhs + " => " + str(rhs) + ")"
 
                 else:
                     if not is_num(lhs):
@@ -79,6 +79,10 @@ def solve_rpn(tokens):
         print colors.red("(error) expression has insufficient number of values\n")
         return ""
 
+    except ZeroDivisionError:
+        print colors.red("(error) Due to the laws of the universe you can't divide by 0\n")
+        return ""
+
     except InvalidStackError:
         print colors.red("(error) expression has too many values\n")
         return ""
@@ -90,4 +94,3 @@ def solve_rpn(tokens):
     except BindError:
         print colors.red("(error) cannot bind literal value to literal value\n")
         return ""
-

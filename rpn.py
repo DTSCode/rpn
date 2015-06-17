@@ -14,7 +14,7 @@ readline.parse_and_bind("tab: complete")
 readline.parse_and_bind("set editing-mode vi")
 
 while True:
-    expr = raw_input(colors.green("[]> "))
+    expr = raw_input(colors.green("[~>] "))
 
     if expr == "quit":
         sys.exit(0)
@@ -30,4 +30,4 @@ while True:
         solution = solve_rpn.solve_rpn(rpn_expr)
 
     if solution != "":
-        print colors.green("Result:") + " " + str(solution) + "\n"
+        print colors.green("Result:") + colors.blue(" " + str(solution) + "\n")
