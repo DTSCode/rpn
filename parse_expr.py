@@ -1,26 +1,30 @@
+import colors, operator_table
+
 def parse_expr(expr):
     tokens = []
-    number_val = ""
+    token_val = ""
 
     for elem in expr:
-        if elem in "*x/+-^()":
-            if number_val != "":
-                tokens.append(number_val)
-                number_val = ""
+        if elem in operator_table.ops:
+            if token_val != "":
+                tokens.append(token_val)
+                token_val = ""
 
             tokens.append(elem)
 
         elif elem in " \t\n":
-            if number_val != "":
-                tokens.append(number_val)
-                number_val = ""
+            if token_val != "":
+                tokens.append(token_val)
+                token_val = ""
 
-            pass
+        elif elem.isdigit() or elem.isalpha():
+            token_val = token_val + elem
 
         else:
-            number_val = number_val + elem
+            print colors.red("(error) token {") + colors.yellow(elem) + colors.red("} is not a valid token\n")
+            return []
 
-    if number_val != "":
-        tokens.append(number_val)
+    if token_val != "":
+        tokens.append(token_val)
 
     return tokens
