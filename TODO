@@ -1,3 +1,4 @@
 TODO:
  * Take input from command line, file, or stdin
  * Add command line options
+ * Accept multiple expressions on one line
