@@ -2,7 +2,7 @@ import operator_table, colors
 
 def is_num(obj):
     try:
-        int(obj)
+        float(obj)
         return True
 
     except ValueError:

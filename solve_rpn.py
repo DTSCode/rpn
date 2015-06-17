@@ -6,7 +6,7 @@ class BindError(Exception): pass
 
 def is_num(obj):
     try:
-        int(obj)
+        float(obj)
         return True
 
     except ValueError:

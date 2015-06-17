@@ -17,8 +17,11 @@ def parse_expr(expr):
                 tokens.append(token_val)
                 token_val = ""
 
-        elif elem.isdigit() or elem.isalpha():
+        elif elem.isdigit() or elem.isalpha() or elem in "_.":
             token_val = token_val + elem
+
+        elif elem == "#":
+            break
 
         else:
             print colors.red("(error) token {") + colors.yellow(elem) + colors.red("} is not a valid token\n")
