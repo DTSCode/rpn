@@ -1,0 +1,5 @@
+TODO:
+ * Hook Ctrl - D
+ * Clean up compile_to_rpn.py
+ * Take input from command line, file, or stdin
+ * Add command line options
