@@ -73,6 +73,7 @@ def solve_rpn(tokens):
                 current_var_name = stack[0]
                 raise VariableNotDefinedError
 
+        operator_table.var_list["LR"] = stack[0]
         return stack[0]
 
     except IndexError:
