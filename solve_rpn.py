@@ -75,6 +75,8 @@ def solve_rpn(tokens):
 
         operator_table.var_list["LR"] = stack[0]
 
+        stack[0] = float(stack[0])
+
         if stack[0] % 2.0 == 0.0 or stack[0] % 2.0 == 1.0:
             stack[0] = int(stack[0])
 
