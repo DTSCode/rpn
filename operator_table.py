@@ -4,13 +4,14 @@ global ops
 global var_list
 
 ops = {
-    "*" : [operator.mul, 3, "left"],
-    "/" : [operator.div, 3, "left"],
+    "=" : [None, 0, "right"],
     "+" : [operator.add, 2, "left"],
     "-" : [operator.sub, 2, "left"],
+    "*" : [operator.mul, 3, "left"],
+    "/" : [operator.div, 3, "left"],
     "^" : [operator.pow, 4, "right"],
     "%" : [operator.mod, 4, "right"],
-    "=" : [None, 0, "right"],
+    "@" : [operator.mul, 19, "left"],
     "(" : [None, 20, "neither"],
     ")" : [None, 20, "neither"]
 }
