@@ -76,28 +76,24 @@ def solve_rpn(tokens):
         operator_table.var_list["LR"] = stack[0]
 
         stack[0] = float(stack[0])
-
-        if stack[0] % 2.0 == 0.0 or stack[0] % 2.0 == 1.0:
-            stack[0] = int(stack[0])
-
         return stack[0]
 
     except IndexError:
-        print colors.red("(error) expression has insufficient number of values\n")
+        print colors.red("(error) expression has insufficient number of values")
         return ""
 
     except ZeroDivisionError:
-        print colors.red("(error) Due to the laws of the universe you can't divide by 0\n")
+        print colors.red("(error) Due to the laws of the universe you can't divide by 0")
         return ""
 
     except InvalidStackError:
-        print colors.red("(error) expression has too many values\n")
+        print colors.red("(error) expression has too many values")
         return ""
 
     except VariableNotDefinedError:
-        print colors.red("(error) variable {") + colors.blue(current_var_name) + colors.red("} is not defined\n")
+        print colors.red("(error) variable {") + colors.blue(current_var_name) + colors.red("} is not defined")
         return ""
 
     except BindError:
-        print colors.red("(error) cannot bind literal value to literal value\n")
+        print colors.red("(error) cannot bind literal value to literal value")
         return ""

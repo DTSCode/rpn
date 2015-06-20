@@ -30,7 +30,7 @@ def compile_to_rpn(tokens):
                     rpn_code.append(current_operator)
 
             except IndexError:
-                print colors.red("(error) mismatched parens\n")
+                print colors.red("(error) mismatched parens")
                 return
 
         elif token in operator_table.ops:
@@ -53,7 +53,7 @@ def compile_to_rpn(tokens):
         operator = operator_stack.pop()
 
         if operator == "(":
-            print colors.red("(error) mismatched parens\n")
+            print colors.red("(error) mismatched parens")
             return []
 
         rpn_code.append(operator)

@@ -1,6 +1,7 @@
 import colors, operator_table
 
 def parse_expr(expr):
+    tokens_list = []
     tokens = []
     token_val = ""
     last_token = None
@@ -14,7 +15,13 @@ def parse_expr(expr):
             if elem == "-" and (last_token in operator_table.ops or last_token == None):
                 tokens.append("-1")
                 tokens.append("@")
-                last_token = 'a'
+                last_token = "a"
+                pass
+
+            elif elem == "+" and (last_token in operator_table.ops or last_token == None):
+                tokens.append("1")
+                tokens.append("@")
+                last_token = "a"
                 pass
 
             else:
@@ -31,13 +38,24 @@ def parse_expr(expr):
         elif elem == "#":
             break
 
+        elif elem == ";":
+            if token_val != "":
+                tokens.append(token_val)
+
+            tokens_list.append(tokens)
+            tokens = []
+            token_val = ""
+            last_token = None
+
         else:
-            print colors.red("(error) token {") + colors.yellow(elem) + colors.red("} is not a valid token\n")
+            print colors.red("(error) token {") + colors.yellow(elem) + colors.red("} is not a valid token")
             return []
 
         last_token = elem
 
     if token_val != "":
         tokens.append(token_val)
+        token_val = ""
 
-    return tokens
+    tokens_list.append(tokens)
+    return tokens_list

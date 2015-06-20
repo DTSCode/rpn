@@ -21,15 +21,3 @@ def cyan(text):
 
 def white(text):
     return "\033[1;37m" + text + "\033[1;m"
-
-def crimson(text):
-    return "\033[1;38m" + text + "\033[1;m"
-
-#print '\033[1;41mHighlighted Red like Radish\033[1;m'
-#print '\033[1;42mHighlighted Green like Grass\033[1;m'
-#print '\033[1;43mHighlighted Brown like Bear\033[1;m'
-#print '\033[1;44mHighlighted Blue like Blood\033[1;m'
-#print '\033[1;45mHighlighted Magenta like Mimosa\033[1;m'
-#print '\033[1;46mHighlighted Cyan like Caribbean\033[1;m'
-#print '\033[1;47mHighlighted Gray like Ghost\033[1;m'
-#print '\033[1;48mHighlighted Crimson like Chianti\033[1;m'"""
